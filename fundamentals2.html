@@ -1,0 +1,34 @@
+<!-- fundamentals1.html-->
+<!-- Chapter 1 and 2 D3.js-->
+
+
+<body>
+    <svg id="chart" width = "1000" height="300"></svg>
+    <script src="https://d3js.org/d3.v5.min.js"></script>
+    <script>
+        const array = [92, 56, 14, 73, 22, 38, 93, 45, 55];
+        const output = [];
+        for(var i=0; i<array.length; i++){
+            output.push(array[i]/2)
+        }
+        const other = output.sort(function(a, b){return a - b});
+
+        d3.select("#chart")
+          .selectAll("circle")
+          .data(other)
+          .enter()
+          .append("circle")
+             .attr("r", d => d)
+             .attr("cx", 100)
+             .attr("cy", 150)
+        
+    
+        setTimeout(function()   {
+            d3.select("#chart").selectAll("circle")
+              .data([50, 150, 250, 350, 450, 550, 650, 750, 850])
+              .transition().duration(1000)
+                .attr("cx", d => d)
+                .attr("fill", "red")
+        }, 2000)
+    </script>
+</body>
