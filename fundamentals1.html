@@ -2,17 +2,29 @@
 <!-- Chapter 1 and 2 D3.js-->
 
 <body>
-    <svg width = "600" height="300"></svg>
+    <svg id="chart" width = "600" height="300"></svg>
+    <script src="https://d3js.org/d3.v5.min.js"></script>
     <script>
+        const array = [24, 12, 8, 6, 4, 2, 1];
+        const output = [];
         function factors(number){
-            const i;
-            const output = [];
-            for(i=0; i<number; i++){
+            for(var i=number; i>0; i--){
                 if((number%i)==0){
-                    output.push(number)
+                    output.push(i)
                 }
             }
-            console.log(output);
+            return output;
         }
+        const test = factors(24);
+        d3.select("#chart")
+          .selectAll("circle")
+          .data(test)
+          .enter()
+          .append("circle")
+             .attr("r", d => d)
+             .attr("cx",  d => d*10)
+             .attr("cy", 150)
+             .attr("fill", "red")
+             .attr("stroke", "black")
     </script>
 </body>
