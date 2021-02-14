@@ -1,0 +1,75 @@
+<!--
+Chase Coley
+-->
+<body>
+    <script src="https://d3js.org/d3.v5.min.js"></script>
+  
+    <!-- Set up basic webpage structure -->
+    <div id="header"></div>
+    <div id="nominal"></div>
+    <div id="ordinal"></div>
+    <div id="interval"></div>
+    <div id="ratio"></div>
+  
+    <style>
+
+      .header {
+          color: black;
+          font-family: cursive;
+      }
+      .crimson {
+          color: #FFFDD0;
+          background-color:crimson;
+      }
+      .fontsize {
+          font-size:small;
+      }
+      .creme {
+          color: crimson;
+          background-color: #FFFDD0;
+
+      }
+      .black {
+          color: red;
+          background-color: black;
+      }
+      .red {
+          color: black;
+          background-color: red;
+      }
+    </style>
+  
+    <script>
+      d3.select("#header").append("h1").text("Talking About Data Types").classed("header", true)
+      d3.select("#nominal")
+        .append("h2")
+        .text("Nominal")
+        .classed("crimson", true)
+        .append("p")
+        .text("Nominal scales are used to lable values such as gender (male/female) which is known as 'dichotomous'. There is also 'nominal with order' which is like temperature (cold, warm, hot, very hot).")
+        .classed("fontsize", true)
+      d3.select("#ordinal")
+        .append("h2")
+        .text("Ordinal")
+        .classed("creme", true)
+        .append("p")
+        .text("Ordinal scales focus on the order of the value, however, the difference between the values is not known. We usually use them to measure non-numeric concepts like level of emotion and satisfaction (Likert scale).")
+        .classed("fontsize", true)
+      d3.select("#interval")
+        .append("h2")
+        .text("Interval")
+        .classed("black", true)
+        .append("p")
+        .text("Interval scales are scales where we know the order and difference between values but there is no true zero. An example of this would be Celsius temperature, due to the fact that there is no such thing as 'no temperature', therefore we cannot compute ratios.")
+        .classed("fontsize", true)
+      d3.select("#ratio")
+        .append("h2")
+        .text("Ratio")
+        .classed("red", true)
+        .append("p")
+        .text("Ratio scales tell us the order, the value between units, and they have an absolute zero. This means that both descriptive and inferential statistics can be applied. An example of ratio scales would be height, weight, duration, etc.")
+        .classed("fontsize", true)
+  
+    </script>
+  
+  </body>
