@@ -10,8 +10,8 @@
     <div id="interval"></div>
     <div id="ratio"></div>
   
+    <!-- Style each div that has been initialized-->
     <style>
-
       .header {
           color: black;
           font-family: cursive;
@@ -37,8 +37,9 @@
           background-color: red;
       }
     </style>
-  
+    <!-- Appends elements to divs that are already initialized-->
     <script>
+      
       d3.select("#header").append("h1").text("Talking About Data Types").classed("header", true)
       d3.select("#nominal")
         .append("h2")
