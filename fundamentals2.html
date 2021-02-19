@@ -19,15 +19,15 @@
     <!-- Orders radii in increasing order and then uses a transition to move the circles to the correct increasing order-->
     <script>
         const array = [92, 56, 14, 73, 22, 38, 93, 45, 55];
-        const output = [];
+        const radii = [];
         for(var i=0; i<array.length; i++){
             output.push(array[i]/2)
         }
-        const other = output.sort(function(a, b){return a - b});
+        const sortedRadii = radii.sort(function(a, b){return a - b});
 
         d3.select("#chart")
           .selectAll("circle")
-          .data(other)
+          .data(sortedRadii)
           .enter()
           .append("circle")
              .attr("r", d => d)
@@ -37,7 +37,7 @@
     
         setTimeout(function()   {
             d3.select("#chart").selectAll("circle")
-              .data(other)
+              .data(sortedRadii)
               .transition().duration(1000)
                 .attr("r", d => d)
 
