@@ -4,21 +4,22 @@
 <body>
     <svg id="chart" width = "600" height="300"></svg>
     <script src="https://d3js.org/d3.v5.min.js"></script>
+    <!-- Takes a number and finds all factors of that number that then become the radius of each circle
+    Postion of the X axis is determined by multiplying each radius by 10-->
     <script>
-        const array = [24, 12, 8, 6, 4, 2, 1];
-        const output = [];
+        const radii = [];
         function factors(number){
             for(var i=number; i>0; i--){
                 if((number%i)==0){
-                    output.push(i)
+                    radii.push(i)
                 }
             }
-            return output;
+            return radii;
         }
-        const test = factors(24);
+        const newRadii = factors(24);
         d3.select("#chart")
           .selectAll("circle")
-          .data(test)
+          .data(newRadii)
           .enter()
           .append("circle")
              .attr("r", d => d)
