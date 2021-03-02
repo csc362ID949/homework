@@ -48,6 +48,7 @@
         .append("p")
         .text("Nominal scales are used to lable values such as gender (male/female) which is known as 'dichotomous'. There is also 'nominal with order' which is like temperature (cold, warm, hot, very hot).")
         .classed("fontsize", true)
+
       d3.select("#ordinal")
         .append("h2")
         .text("Ordinal")
@@ -55,6 +56,7 @@
         .append("p")
         .text("Ordinal scales focus on the order of the value, however, the difference between the values is not known. We usually use them to measure non-numeric concepts like level of emotion and satisfaction (Likert scale).")
         .classed("fontsize", true)
+
       d3.select("#interval")
         .append("h2")
         .text("Interval")
@@ -62,6 +64,7 @@
         .append("p")
         .text("Interval scales are scales where we know the order and difference between values but there is no true zero. An example of this would be Celsius temperature, due to the fact that there is no such thing as 'no temperature', therefore we cannot compute ratios.")
         .classed("fontsize", true)
+        
       d3.select("#ratio")
         .append("h2")
         .text("Ratio")
