@@ -40,35 +40,41 @@
     <!-- Appends elements to divs that are already initialized-->
     <script>
       
+      //Appends header tag and adds texts and then a class to header
       d3.select("#header").append("h1").text("Talking About Data Types").classed("header", true)
+      //Adds crimson class to nominal tag and then appends header and text. Next it appends the paragraph and adds text and font size
       d3.select("#nominal")
+        .classed("crimson", true)
         .append("h2")
         .text("Nominal")
-        .classed("crimson", true)
+      d3.select("#nominal")
         .append("p")
         .text("Nominal scales are used to lable values such as gender (male/female) which is known as 'dichotomous'. There is also 'nominal with order' which is like temperature (cold, warm, hot, very hot).")
         .classed("fontsize", true)
-
+      //Adds creme class to ordinal tag and then appends header and text. Next it appends the paragraph to ordinal tag, adds text and font size.
       d3.select("#ordinal")
+        .classed("creme", true)
         .append("h2")
         .text("Ordinal")
-        .classed("creme", true)
+      d3.select("#ordinal")
         .append("p")
         .text("Ordinal scales focus on the order of the value, however, the difference between the values is not known. We usually use them to measure non-numeric concepts like level of emotion and satisfaction (Likert scale).")
         .classed("fontsize", true)
-
+      //Adds black class to interval tag and then appends header and text. Next it appends the paragraph to interval tag, adds text and font size.
       d3.select("#interval")
+        .classed("black", true)
         .append("h2")
         .text("Interval")
-        .classed("black", true)
+      d3.select("#interval")
         .append("p")
         .text("Interval scales are scales where we know the order and difference between values but there is no true zero. An example of this would be Celsius temperature, due to the fact that there is no such thing as 'no temperature', therefore we cannot compute ratios.")
         .classed("fontsize", true)
-        
+      //Adds red class to ratio tag and then appends header and text. Next it appends the paragraph to ratio tag, adds text and font size.
       d3.select("#ratio")
+        .classed("red", true)
         .append("h2")
         .text("Ratio")
-        .classed("red", true)
+      d3.select("#ratio")
         .append("p")
         .text("Ratio scales tell us the order, the value between units, and they have an absolute zero. This means that both descriptive and inferential statistics can be applied. An example of ratio scales would be height, weight, duration, etc.")
         .classed("fontsize", true)
